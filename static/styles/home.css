@@ -7,11 +7,11 @@
 }
 #logo {
     width: auto;
-    height: 5vh; /* Changed from 5em to 5vh */
+    height: 12vh; /* Changed from 5em to 5vh */
     margin-top: 1%; /* Changed from 5px to 1% */
     margin-bottom: 1%; /* Changed from 5px to 1% */
     margin-left: 0;
-    margin-right: 10%; /* Changed from 25em to 10% */
+    margin-right:42vw; /* Changed from 25em to 10% */
 }
 
 .navbar {
@@ -42,7 +42,7 @@
     border : none;
     color: #B87333;
     align-items: right;
-    margin-left: 1em;
+    margin-left: 4vh;
 }
 
 
