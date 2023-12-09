@@ -90,6 +90,7 @@
         font-size: 14px;
         letter-spacing: 2px;
         cursor: pointer;
+        display: block;
     }
     
     @media (max-width: 500px) {
