@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
-  --background: rgba(0, 214, 170, .85);
+  --background: rgba(53, 207, 134, 1);
 }
 
 *, *::before, *::after {
@@ -13,6 +13,13 @@ body {
 	background: #ffffff;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 400;
+}
+
+.logo{
+	width: auto;
+    height: 5em;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .content {
