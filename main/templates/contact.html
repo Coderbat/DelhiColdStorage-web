@@ -4,7 +4,7 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'styles/contact1.css' %}">
   <div  class = "content">
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form id="ContactForm" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="dbd9ddb4-4f8c-49c2-98d7-7aec6802b854">
                 <div class="form">
                     <div class="form-txt">
@@ -20,6 +20,7 @@
                         <input type="email" name="email" id="email" placeholder="Email" required>
                         <input type="tel" name="phone" id="phone" placeholder="Contact Number" pattern="[0-9]{10}" required>
                         <textarea name="message" id="message" cols="52" rows="7" placeholder="Message" required></textarea>
+                        <div class="h-captcha" data-captcha="true"></div>
                         <button>SEND MESSAGE</button>
                     </div>
                 </div>
@@ -52,6 +53,18 @@ window.onload = function() {
         event.target.setCustomValidity('');
     }
 }
+const form = document.getElementById('ContactForm');
+
+form.addEventListener('submit', function(e) {
+
+    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+    if (!hCaptcha) {
+        e.preventDefault();
+        alert("Please fill out captcha field")
+        return
+    }
+});
 </script>
 
 {% endblock content %}
