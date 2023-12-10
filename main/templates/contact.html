@@ -4,7 +4,8 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'styles/contact1.css' %}">
   <div  class = "content">
-            <form>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="dbd9ddb4-4f8c-49c2-98d7-7aec6802b854">
                 <div class="form">
                     <div class="form-txt">
                         <h1 class = "text_align">Contact Us</h1>
@@ -40,6 +41,7 @@
             </section>
         
         </div>
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <script>
 window.onload = function() {
     var phoneInput = document.getElementById('phone');
