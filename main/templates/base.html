@@ -6,14 +6,16 @@
 </head>
 <body>
 	<header>
-		<img class="logo" src="{% static 'images/logo.png' %}" alt="Logo">
+		<a> 
+			<img class="logo" src="{% static 'images/logo.png' %}" alt="Logo">
+		</a>
 		<input type="checkbox" id="nav-toggle" class="nav-toggle">
 		<nav>
 			<ul>
-				<li><a href="{% url 'home' %}">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="{% url 'contact' %}">Contact</a></li>
+				<li><a class = "page_link_nav" href="{% url 'home' %}">Home</a></li>
+				<li><a class = "page_link_nav" href="#">About</a></li>
+				<li><a class = "page_link_nav" href="#">Blog</a></li>
+				<li><a class = "page_link_nav" href="{% url 'contact' %}">Contact</a></li>
 			</ul>
 		</nav>
 		<label for="nav-toggle" class="nav-toggle-label">

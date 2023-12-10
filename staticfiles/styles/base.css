@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
-  --background: rgba(0, 214, 170, .85);
+  --background: rgba(53, 207, 134, 1);
 }
 
 *, *::before, *::after {
@@ -13,6 +13,15 @@ body {
 	background: #ffffff;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 400;
+}
+
+.logo{
+	width: auto;
+    height: 5em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+	margin-left: 35vw;
+	margin-right: 100%;
 }
 
 .content {
@@ -96,7 +105,7 @@ nav li {
 	margin-left: 1em;
 }
 
-nav a {
+.page_link_nav {
 	color: white;
 	text-decoration: none;
 	font-size: 1.2rem;
@@ -105,7 +114,7 @@ nav a {
 	transition: opacity 150ms ease-in-out;
 }
 
-nav a:hover {
+.page_link_nav:hover {
 	color:#000;
 }
 
@@ -113,12 +122,12 @@ nav a:hover {
 	transform: scale(1,1);
 }
 
-.nav-toggle:checked ~ nav a {
+.nav-toggle:checked ~ .page_link_nav {
 	opacity: 1;
 	transition: opacity 250ms ease-in-out 250ms;
 }
 
-@media screen and (min-width: 800px) {
+@media (min-width: 1020px) {
 	.nav-toggle-label {
 		display: none;
 	}
@@ -129,6 +138,7 @@ nav a:hover {
 	}
 
 	.logo {
+		margin-left: 20vw;
 		grid-column: 2 / 3;
 	}
 
@@ -149,12 +159,12 @@ nav a:hover {
 		margin-bottom: 0
 	}
 
-	nav a {
+	.page_link_nav {
 		opacity: 1;
 		position: relative;
 	}
 
-	nav a::before {
+	.page_link_nav::before {
 		content: '';
 		display: block;
 		height: 5px;
@@ -167,7 +177,19 @@ nav a:hover {
 		transition: transform ease-in-out 250ms;
 	}
 
-	nav a:hover::before {
+	.page_link_nav:hover::before {
 		transform: scale(1,1);
+	}
+}
+
+@media(min-width: 1020px) and (max-width: 1260px) {
+	.logo{
+		margin-left: 10vw;
+	}
+}
+
+@media(max-width: 768px){
+	.logo{
+		margin-left: 25vw;
 	}
 }
