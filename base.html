@@ -1,8 +1,33 @@
-{% extends 'base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Delhi Cold Storage</title>
+	<link rel="stylesheet" type="text/css" href="styles/base.css">
+	<link rel="stylesheet" href="styles/contact1.css">
 
-{% block content %}
-<link rel="stylesheet" href="{% static 'styles/contact1.css' %}">
+	<script src="https://web3forms.com/client/script.js" async defer></script>
+	<script src="scripts/base.js"></script>
+</head>
+<body>
+	<header>
+		<a> 
+			<img class="logo" src="images/logo.png" alt="Logo">
+		</a>
+		<input type="checkbox" id="nav-toggle" class="nav-toggle">
+		<nav>
+			<ul>
+				<li><a class = "page_link_nav" href="home.html">Home</a></li>
+				<li><a class = "page_link_nav" href="#">About</a></li>
+				<li><a class = "page_link_nav" href="#">Blog</a></li>
+				<li><a class = "page_link_nav" href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<label for="nav-toggle" class="nav-toggle-label">
+			<span></span>
+		</label>
+	</header>
+
   <div  class = "content">
             <form id="ContactForm" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="dbd9ddb4-4f8c-49c2-98d7-7aec6802b854">
@@ -42,30 +67,6 @@
             </section>
         
         </div>
-<script src="https://web3forms.com/client/script.js" async defer></script>
-<script>
-window.onload = function() {
-    var phoneInput = document.getElementById('phone');
-    phoneInput.oninvalid = function(event) {
-        event.target.setCustomValidity('Please enter a valid phone number.');
-    }
-    phoneInput.oninput = function(event) {
-        event.target.setCustomValidity('');
-    }
-}
-const form = document.getElementById('ContactForm');
-
-form.addEventListener('submit', function(e) {
-
-    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
-
-    if (!hCaptcha) {
-        e.preventDefault();
-        alert("Please fill out captcha field")
-        return
-    }
-});
-</script>
-
-{% endblock content %}
-
+		
+</body>
+</html>
