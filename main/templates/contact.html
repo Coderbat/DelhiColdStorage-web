@@ -17,6 +17,7 @@
                     <div class="form-details">
                         <input type="text" name="name" id="name" placeholder="Name" required>
                         <input type="email" name="email" id="email" placeholder="Email" required>
+                        <input type="tel" name="phone" id="phone" placeholder="Contact Number" pattern="[0-9]{10}" required>
                         <textarea name="message" id="message" cols="52" rows="7" placeholder="Message" required></textarea>
                         <button>SEND MESSAGE</button>
                     </div>
@@ -39,7 +40,17 @@
             </section>
         
         </div>
-
+<script>
+window.onload = function() {
+    var phoneInput = document.getElementById('phone');
+    phoneInput.oninvalid = function(event) {
+        event.target.setCustomValidity('Please enter a valid phone number.');
+    }
+    phoneInput.oninput = function(event) {
+        event.target.setCustomValidity('');
+    }
+}
+</script>
 
 {% endblock content %}
 
