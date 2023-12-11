@@ -20,14 +20,16 @@ form.addEventListener('submit', function(e) {
   }
 });
 
-window.addEventListener('scroll', function() {
-  var image = document.getElementById('parallax-image');
-  var certainElement = document.getElementById('image_1_end');
-  var certainElementPosition = certainElement.getBoundingClientRect().top + window.scrollY;
+// window.addEventListener('scroll', function() {
+//   var image = document.getElementById('parallax-image1');
+//   var submitButton = document.getElementById('image_1_end');
+//   var submitButtonPosition = submitButton.offsetTop;
 
-  if (window.scrollY > certainElementPosition) {
-      image.style.position = 'absolute';
-  } else {
-      image.style.position = 'sticky';
-  }
-});
+//   if (window.scrollY > submitButtonPosition) {
+//     image.style.position = 'absolute';
+//     console.log(submitButton.offsetTop)
+//     console.log(window.scrollY)
+//   } else {
+//     image.style.position = 'sticky';
+//   }
+// });
