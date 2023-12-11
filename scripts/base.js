@@ -19,17 +19,3 @@ form.addEventListener('submit', function(e) {
       return
   }
 });
-
-// window.addEventListener('scroll', function() {
-//   var image = document.getElementById('parallax-image1');
-//   var submitButton = document.getElementById('image_1_end');
-//   var submitButtonPosition = submitButton.offsetTop;
-
-//   if (window.scrollY > submitButtonPosition) {
-//     image.style.position = 'absolute';
-//     console.log(submitButton.offsetTop)
-//     console.log(window.scrollY)
-//   } else {
-//     image.style.position = 'sticky';
-//   }
-// });
