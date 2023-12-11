@@ -8,6 +8,10 @@
         width: 90%;
         margin: 0 auto;
     }
+    .parent_parallax{
+        position: relative;
+        overflow: hidden;
+    }
     
     :root {
         /* //....... Color ........// */
@@ -187,3 +191,10 @@
         border-radius: 30px;
         overflow: hidden;
     }
+.fade-in {
+        opacity:0;
+        visibility: hidden;
+        margin-top: 100px;
+        -webkit-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+}
