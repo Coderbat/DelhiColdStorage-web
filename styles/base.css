@@ -3,7 +3,12 @@
 :root {
   --background: rgba(53, 207, 134, 1);
 }
-
+#parallax-image {
+    position: sticky;
+    z-index: 9999;
+	width: 10vw;
+	top:100px;
+}
 *, *::before, *::after {
   box-sizing: border-box;
 }

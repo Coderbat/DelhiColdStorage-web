@@ -19,3 +19,15 @@ form.addEventListener('submit', function(e) {
       return
   }
 });
+
+window.addEventListener('scroll', function() {
+  var image = document.getElementById('parallax-image');
+  var certainElement = document.getElementById('image_1_end');
+  var certainElementPosition = certainElement.getBoundingClientRect().top + window.scrollY;
+
+  if (window.scrollY > certainElementPosition) {
+      image.style.position = 'absolute';
+  } else {
+      image.style.position = 'sticky';
+  }
+});
