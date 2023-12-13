@@ -136,3 +136,9 @@ box-sizing: border-box;
 -moz-box-sizing: border-box;   
 -webkit-box-sizing: border-box;
 }
+/* Set door height, .door, .section_doors, div before grid flex */
+@media (max-width: 640px) {
+    .door{
+        height: 350vh;
+    }
+}
