@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
 .slide_show_div{
     position: absolute; 
-    top: 13vh; 
+    top: 10vh; 
     z-index: 998; 
     background-color: white;
 }
@@ -9,7 +9,7 @@
 .slider {
   position: relative;
   width: 99vw;
-  height: 87vh;
+  height: 90vh;
   overflow: hidden;
   box-sizing: border-box;
   margin: 0;
