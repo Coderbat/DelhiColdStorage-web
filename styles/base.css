@@ -41,6 +41,7 @@ body {
 }
 
 .content {
+  margin-top: -240vh;		
   height: 100vh;
   background-color: #ffffff;
   background-blend-mode: multiply;
@@ -326,6 +327,9 @@ nav li {
 }
   
   @media (max-width: 640px) {
+	.content {
+	  margin-top: 165vh;
+	}
 	.grid-flex {
 	  height: 40em;
 	  display: -webkit-flex;
