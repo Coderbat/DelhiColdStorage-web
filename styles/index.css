@@ -10,7 +10,7 @@
     -webkit-box-sizing: border-box;
 }
 .spacing{
-    height: 220vh;
+    height: 328vh;
 }
 body {
     overflow-x: hidden;
@@ -18,7 +18,7 @@ body {
 
 .door {
     width: 80%;
-    height: 685vh;
+    height: 835vh;
     background: #332119;
     margin: 80px auto;
     position: relative;
@@ -33,6 +33,7 @@ body {
 }
 
 .left{
+    z-index:6 ;
     position: absolute;
     top: 0px;
     left: 0;
@@ -65,6 +66,7 @@ body {
 }
 
 .right {
+    z-index:6 ;
     position: absolute;
     top: 0px;
     right: 0;
@@ -139,8 +141,8 @@ box-sizing: border-box;
 -moz-box-sizing: border-box;   
 -webkit-box-sizing: border-box;
 }
-/* Set door height, .door, .section_doors, div before grid flex */
-@media (max-width: 640px) {
+/* Set door height, .door, .content, div before grid flex */
+@media (max-width: 1120px) {
     .door{
         height: 1490vh;
     }

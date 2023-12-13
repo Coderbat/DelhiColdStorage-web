@@ -41,7 +41,7 @@ body {
 }
 
 .content {
-  margin-top: -240vh;		
+  margin-top: -165vh;		
   height: 100vh;
   background-color: #ffffff;
   background-blend-mode: multiply;
@@ -281,6 +281,10 @@ nav li {
   }
 
 /* code for about us  */
+
+.image-welcome{
+	padding-bottom: 50vh;
+}
 .col-text {
 	height:20em;
   }
@@ -317,6 +321,7 @@ nav li {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 5;
   }
   .Aligner-item {
 	width: 60%;
@@ -327,7 +332,13 @@ nav li {
     background-repeat: no-repeat; /* Add this to prevent the image from repeating */
 }
   
-  @media (max-width: 640px) {
+  @media (max-width: 1120px) {
+	.image-welcome{
+	  padding-bottom: 0;
+	}
+	.text-welcome{
+	  margin-top: 35vh;
+	}
 	.content {
 	  margin-top: 165vh;
 	}
@@ -338,6 +349,7 @@ nav li {
 	  flex-direction: column; 
 	 }
 	.col {
+	  height: auto;
 	  order:vertical;
 	}
 	.col-left {
