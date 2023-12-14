@@ -18,7 +18,6 @@ form.addEventListener('submit', function(e) {
       alert("Please fill out captcha field")
       return
   }
-  form.reset();
 });
 
 window.onload = function() {
@@ -70,18 +69,6 @@ prevButton.addEventListener("click", () => {
     slideInterval = setInterval(nextSlide, intervalTime);
   }
 });
-
-if (auto) {
-  slideInterval = setInterval(nextSlide, intervalTime);
-}
-
-
-window.onload = function() {
-  if (window.hcaptcha) {
-    hcaptcha.reset();
-  }
-};
-
 
 // window.addEventListener('scroll', function() {
 //   var slideShowDiv = document.querySelector('.slide_show_div');
