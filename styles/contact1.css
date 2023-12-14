@@ -176,18 +176,21 @@
             padding-left: 0px;
         }
     }
-    .map_sec{
-        padding: 50px 0px;
+    .map_sec {
+        padding: 3.125rem 0; /* 50px / 16px = 3.125rem */
     }
-    .map_inner h2, .map_inner p{
+      
+    .map_inner h2, .map_inner p {
         color: #000;
-        text-align: center
+        text-align: center;
     }
-    .map_inner p{
-        font-size: 13px;
-    }
-    .map_bind{
-       margin-top: 50px;
-        border-radius: 30px;
+      
+      .map_inner p {
+        font-size: 0.8125rem; /* 13px / 16px = 0.8125rem */
+      }
+      
+      .map_bind {
+        margin-top: 3.125rem; /* 50px / 16px = 3.125rem */
+        border-radius: 1.875rem; /* 30px / 16px = 1.875rem */
         overflow: hidden;
-    }
+      }
