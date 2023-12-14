@@ -155,13 +155,13 @@ box-sizing: border-box;
 
 @media(max-height:600px) and (max-width: 1120px) {
     .spacing{
-        min-height: 5800px;
+        min-height: 6000px;
     }
     .door{
         min-height: 12400px;
     }
     .content{
-        min-height: 10000px;
+        margin-top: 4300px;
     }
 }
 
@@ -173,7 +173,7 @@ box-sizing: border-box;
         min-height: 5000px;
     }
     .content{
-        margin-top: 1750px;
+        margin-top: 2000px;
     }
 }
 
