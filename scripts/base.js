@@ -18,7 +18,14 @@ form.addEventListener('submit', function(e) {
       alert("Please fill out captcha field")
       return
   }
+  form.reset();
 });
+
+window.onload = function() {
+  if (window.hcaptcha) {
+    hcaptcha.reset();
+  }
+};
 
 
 // Slide show js
