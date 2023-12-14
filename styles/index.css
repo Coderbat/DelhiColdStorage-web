@@ -178,6 +178,15 @@ box-sizing: border-box;
     }
 }
 
+@media (max-width: 370px){
+    .door{
+        min-height: 970rem;
+    }
+    .spacing{
+        min-height: 445rem;
+    }
+}
+
 /* Set door height, .door, .content, div before grid flex */
 
 /* @media (max-height: 600px) {
