@@ -339,9 +339,6 @@ nav li {
 	.text-welcome{
 	  margin-top: 35vh;
 	}
-	.content {
-	  margin-top: 165vh;
-	}
 	.grid-flex {
 	  height: 40em;
 	  display: -webkit-flex;
@@ -369,6 +366,3 @@ nav li {
 		  }
   }
 
-  
-  
-  

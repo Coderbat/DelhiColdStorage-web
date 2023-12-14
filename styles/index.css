@@ -142,11 +142,49 @@ box-sizing: border-box;
 -webkit-box-sizing: border-box;
 }
 /* Set door height, .door, .content, div before grid flex */
-@media (max-width: 1120px) {
+
+@media (max-height: 600px) {
     .door{
-        height: 1490vh;
+        min-height: 5000px;
     }
     .spacing{
-        height: 580vh;
+        min-height: 1000px;
+    }
+    
+}
+
+@media(max-height:600px) and (max-width: 1120px) {
+    .spacing{
+        min-height: 5800px;
+    }
+    .door{
+        min-height: 12400px;
+    }
+    .content{
+        min-height: 10000px;
+    }
+}
+
+@media (max-width: 1120px) and (min-height: 600px) {
+    .door{
+        min-height: 11500px;
+    }
+    .spacing{
+        min-height: 5000px;
+    }
+    .content{
+        margin-top: 1750px;
+    }
+}
+
+@media (max-height:600px) and (min-width: 1120px) {
+    .door{
+        min-height: 6800px;
+    }
+    .spacing{
+        min-height: 3600px;
+    }
+    .content{
+        margin-top: 1750px;
     }
 }
