@@ -69,6 +69,13 @@ if (auto) {
 }
 
 
+window.onload = function() {
+  if (window.hcaptcha) {
+    hcaptcha.reset();
+  }
+};
+
+
 // window.addEventListener('scroll', function() {
 //   var slideShowDiv = document.querySelector('.slide_show_div');
 //   var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
