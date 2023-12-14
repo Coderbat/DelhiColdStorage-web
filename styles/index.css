@@ -18,7 +18,7 @@ body {
 
 .door {
     width: 80%;
-    height: 470rem;
+    height: 490rem;
     background: #332119;
     margin: 80px auto;
     position: relative;
@@ -141,6 +141,43 @@ box-sizing: border-box;
 -moz-box-sizing: border-box;   
 -webkit-box-sizing: border-box;
 }
+
+@media (max-width: 1120px){
+    .door{
+        min-height: 910rem;
+    }
+    .spacing{
+        min-height: 390rem;
+    }
+}
+
+@media (max-height: 630px) and (min-width: 1120px){
+    .door{
+        min-height: 600rem;
+    }
+    .spacing{
+        min-height: 270rem;
+    }
+}
+
+@media (max-height: 630px) and (max-width: 1120px) and (min-width: 500px){
+    .door{
+        min-height: 930rem;
+    }
+    .spacing{
+        min-height: 440rem;
+    }
+}
+
+@media (min-height: 500px) and (max-width: 500px){
+    .door{
+        min-height: 970rem;
+    }
+    .spacing{
+        min-height: 440rem;
+    }
+}
+
 /* Set door height, .door, .content, div before grid flex */
 
 /* @media (max-height: 600px) {
