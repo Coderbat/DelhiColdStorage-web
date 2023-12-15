@@ -121,3 +121,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 });
+
+$(document).ready(function() {
+    $('#about_link').on('click', function(event) {
+        event.preventDefault(); // Prevent the default action
+
+        // Create a function to check if the about_start element exists
+        function checkAndScroll() {
+            const aboutStart = $('#about_start');
+            if (aboutStart.length) {
+                // Get the font-size of the root element
+                const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+                // Calculate the extra pixels in rem
+                const extraPixels = aboutStart.offset().top > $(window).scrollTop() ? 120 * fontSize : -(10 * fontSize);
+
+                $('html, body').animate({
+                    scrollTop: aboutStart.offset().top + extraPixels
+                }, 1000); // Scroll to the about_start element
+            } else {
+                setTimeout(checkAndScroll, 100); // If the about_start element doesn't exist, check again after 100ms
+            }
+        }
+
+        // Call the function
+        checkAndScroll();
+    });
+});
