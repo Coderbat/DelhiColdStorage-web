@@ -123,18 +123,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 $(document).ready(function() {
-    let lastTriggeredScrollPosition = null;
-
     $('#about_link').on('click', function(event) {
         event.preventDefault(); // Prevent the default action
 
-        const currentScrollPosition = $(window).scrollTop();
-
-        // If the user has not scrolled since the last time the function was triggered, do nothing
-        if (lastTriggeredScrollPosition === currentScrollPosition) {
-            return;
-        }
-
+        // Create a function to check if the about_start element exists
         function checkAndScroll() {
             const aboutStart = $('#about_start');
             if (aboutStart.length) {
@@ -154,10 +146,5 @@ $(document).ready(function() {
 
         // Call the function
         checkAndScroll();
-
-        // Update the last triggered scroll position after 5 seconds
-        setTimeout(function() {
-            lastTriggeredScrollPosition = $(window).scrollTop();
-        }, 3000);
     });
 });
