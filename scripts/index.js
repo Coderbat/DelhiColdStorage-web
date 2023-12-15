@@ -38,18 +38,40 @@ window.addEventListener('load', () => {
   
     // Function to adjust the position of contact_form_door
     const adjustPosition = () => {
-      // Calculate the bottom position of the door div relative to the top of the document
-      const doorBottom = door.getBoundingClientRect().bottom + window.scrollY;
+        // Calculate the bottom position of the door div relative to the top of the document
+        const doorBottom = door.getBoundingClientRect().bottom + window.scrollY;
   
-      // Position the contact_form_door div right after the door div
-      contactFormDoor.style.position = 'absolute';
-      contactFormDoor.style.top = `${doorBottom}px`;
+        // Position the contact_form_door div right after the door div
+        contactFormDoor.style.position = 'absolute';
+        contactFormDoor.style.top = `${doorBottom}px`;
     };
-  
+
+    // Throttle function
+    const throttle = (func, limit) => {
+        let lastFunc;
+        let lastRan;
+        return function() {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function() {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        }
+    };
+
     // Adjust the position when the page loads
     adjustPosition();
   
     // Adjust the position whenever the window is resized or scrolled
     window.addEventListener('resize', adjustPosition);
-    window.addEventListener('scroll', adjustPosition);
-  });
+    window.addEventListener('scroll', throttle(adjustPosition, 2000)); // Throttle scroll events
+});
