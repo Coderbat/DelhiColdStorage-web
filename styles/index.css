@@ -19,7 +19,7 @@ body {
 .door {
     width: 80%;
     height: 490rem;
-    background: #ffff7b;
+    background: #000000;
     margin: 80px auto;
     position: relative;
     perspective: 1000px;
