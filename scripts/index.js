@@ -78,3 +78,45 @@ window.addEventListener('scroll', () => {
     }
 });
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const contactLink = document.querySelector('a[href="#ContactForm"]');
+
+    // Add a click event listener to the contact link
+    contactLink.addEventListener('click', (event) => {
+        // Prevent the default link click behavior
+        event.preventDefault();
+
+        // Start the recursive scrolling
+        scrollToContactForm();
+    });
+
+    let timeoutId = null; // Declare and initialize timeoutId
+
+    function scrollToContactForm(previousY) {
+        // Select the contact section
+        const contactSection = document.getElementById('ContactForm');
+
+        // Check if the contact section exists
+        if (contactSection) {
+            // Get the current y-coordinate of the contact section
+            const currentY = contactSection.getBoundingClientRect().top;
+
+            // Check if the y-coordinate has changed
+            if (currentY !== previousY) {
+                // Scroll to the contact section
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Clear the previous timeout, if there is one
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                }
+
+                // Call this function again after a delay
+                timeoutId = setTimeout(() => {
+                    scrollToContactForm(currentY);
+                }, 400); // Adjust the delay as needed
+            }
+        }
+    }
+});

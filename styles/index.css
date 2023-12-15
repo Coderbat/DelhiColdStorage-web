@@ -16,6 +16,9 @@ body {
     overflow-x: hidden;
     background-color: #E6F7FF;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 .door {
     width: 100%;
