@@ -22,8 +22,9 @@ html{
 
 .door {
     width: 100%;
+    background-image: url('../images/cold_storage.gif');
     height: 320rem;
-    background: #E6F7FF;
+    /* background: #E6F7FF; */
     margin: 80px auto;
     position: relative;
     perspective: 1000px;
