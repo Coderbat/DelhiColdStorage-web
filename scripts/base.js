@@ -21,12 +21,6 @@ form.addEventListener('submit', function(e) {
   form.reset();
 });
 
-window.onload = function() {
-  if (window.hcaptcha) {
-    hcaptcha.reset();
-  }
-};
-
 
 // Slide show js
 const slides = document.querySelectorAll(".slide");
@@ -74,13 +68,6 @@ prevButton.addEventListener("click", () => {
 if (auto) {
   slideInterval = setInterval(nextSlide, intervalTime);
 }
-
-
-window.onload = function() {
-  if (window.hcaptcha) {
-    hcaptcha.reset();
-  }
-};
 
 
 // window.addEventListener('scroll', function() {
