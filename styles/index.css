@@ -14,12 +14,13 @@
 }
 body {
     overflow-x: hidden;
+    background-color: #E6F7FF;
 }
 
 .door {
     width: 100%;
     height: 320rem;
-    background: #c8c2c2;
+    background: #E6F7FF;
     margin: 80px auto;
     position: relative;
     perspective: 1000px;
@@ -39,10 +40,10 @@ body {
     top: 0px;
     left: 0;
     width: 50%;
-    height: 100%;
-    border: 5px solid #332119;
+    height: 100%;    
+    border: 2px solid #000000;
     content: "";
-    background: #231712;
+    background: linear-gradient(to bottom right, #343434, #828282, #303030);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -73,9 +74,9 @@ body {
     right: 0;
     width: 50%;
     height: 100%;
-    border: 5px solid #332119;
+    border: 2px solid #000000;
     content: "";
-    background: #231712;
+    background: linear-gradient(to bottom right, #343434, #828282, #303030);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -88,7 +89,7 @@ body {
 .right::before {
     width: 5px;
     height: 30px;
-    background: #643c2b;
+    background: #db07db;
     content: "";
     position: absolute;
     top: 50%;

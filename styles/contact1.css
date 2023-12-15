@@ -107,7 +107,7 @@
         padding: 15px 25px;
         color: var(--white);
         font-weight: 500;
-        background: var(--black);
+        background: #55bf55;
         outline: none;
         border: none;
         margin: 15px;
@@ -115,7 +115,7 @@
         letter-spacing: 2px;
         cursor: pointer;
         display: block;
-        
+        border-radius: 1em;
     }
 
     .h-captcha {

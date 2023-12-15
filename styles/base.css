@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
-  --background: rgba(53, 207, 134, 1);
+  --background: #55bf55
 }
 #parallax-image1 {
     position: sticky;
