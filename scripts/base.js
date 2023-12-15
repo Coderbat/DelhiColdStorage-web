@@ -66,31 +66,18 @@ prevButton.addEventListener("click", () => {
     slideInterval = setInterval(nextSlide, intervalTime);
   }
 });
-// put input field back in focus
-// Select all input fields
-const inputs = document.querySelectorAll('input');
 
-// Add event listeners to each input field
-inputs.forEach(input => {
-  // When the input field is focused, disable scrolling
-  input.addEventListener('focus', () => {
-    gsap.utils.toArray(".door").forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top", 
-        pin: true, 
-        pinSpacing: false,
-        scrub: true,
-        end: () => "+=" + panel.offsetWidth,
-        invalidateOnRefresh: true,
-        // Disable scrolling when the input field is focused
-        onToggle: self => self.isActive && window.scrollTo(0, self.start)
-      });
-    });
-  });
+// Calculate the viewport height
+let vh = window.innerHeight * 0.01;
 
-  // When the input field loses focus, enable scrolling
-  input.addEventListener('blur', () => {
-    ScrollTrigger.refresh();
-  });
+// Set the value in the --vh custom property
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+// Listen to the resize event
+window.addEventListener('resize', () => {
+  // Recalculate the viewport height
+  let vh = window.innerHeight * 0.01;
+
+  // Set the value in the --vh custom property
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
