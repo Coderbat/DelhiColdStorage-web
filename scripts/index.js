@@ -38,18 +38,34 @@ window.addEventListener('load', () => {
   
     // Function to adjust the position of contact_form_door
     const adjustPosition = () => {
-      // Calculate the bottom position of the door div relative to the top of the document
-      const doorBottom = door.getBoundingClientRect().bottom + window.scrollY;
+        // Calculate the bottom position of the door div relative to the top of the document
+        const doorBottom = door.getBoundingClientRect().bottom + window.scrollY;
   
-      // Position the contact_form_door div right after the door div
-      contactFormDoor.style.position = 'absolute';
-      contactFormDoor.style.top = `${doorBottom}px`;
+        // Position the contact_form_door div right after the door div
+        contactFormDoor.style.position = 'absolute';
+        contactFormDoor.style.top = `${doorBottom}px`;
     };
-  
+
+    // Store the last scroll position
+    let lastScrollY = window.scrollY;
+
     // Adjust the position when the page loads
     adjustPosition();
   
-    // Adjust the position whenever the window is resized or scrolled
+    // Adjust the position whenever the window is resized
     window.addEventListener('resize', adjustPosition);
-    window.addEventListener('scroll', adjustPosition);
-  });
+
+    // Adjust the position whenever the window is scrolled by at least 100vh
+    window.addEventListener('scroll', () => {
+        // Calculate the change in scroll position
+        const deltaY = Math.abs(window.scrollY - lastScrollY);
+
+        // Check if the scroll position has changed by at least 100vh
+        if (deltaY >= window.innerHeight) {
+            adjustPosition();
+
+            // Update the last scroll position
+            lastScrollY = window.scrollY;
+        }
+    });
+});

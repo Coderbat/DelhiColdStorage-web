@@ -186,3 +186,8 @@ box-sizing: border-box;
         min-height: 315rem;
     }
 }
+
+/* @media (max-width:1850px){
+    .door{
+        overflow-x:hidden
+    }} */
