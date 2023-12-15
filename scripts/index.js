@@ -47,6 +47,7 @@ window.addEventListener('load', () => {
     };
 
     //adjust conditions
+let timeoutId;
 // Store the last scroll position
 let lastScrollY = window.scrollY;
 
