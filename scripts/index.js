@@ -30,21 +30,26 @@ jQuery(document).ready(function() {
   
    
 });
-document.addEventListener('DOMContentLoaded', () => {
-    // Select all input fields
-    const inputs = document.querySelectorAll('input');
+
+window.addEventListener('load', () => {
+    // Select the door and contact_form_door divs
+    const door = document.querySelector('.door');
+    const contactFormDoor = document.querySelector('.contact_form_door');
   
-    // Add event listeners to each input field
-    inputs.forEach(input => {
-      // When the input field is focused, disable scrolling
-      input.addEventListener('focus', () => {
-        document.body.style.overflow = 'hidden';
-        console.log("focused");
-      });
+    // Function to adjust the position of contact_form_door
+    const adjustPosition = () => {
+      // Calculate the bottom position of the door div relative to the top of the document
+      const doorBottom = door.getBoundingClientRect().bottom + window.scrollY;
   
-      // When the input field loses focus, enable scrolling
-      input.addEventListener('blur', () => {
-        document.body.style.overflow = '';
-      });
-    });
+      // Position the contact_form_door div right after the door div
+      contactFormDoor.style.position = 'absolute';
+      contactFormDoor.style.top = `${doorBottom}px`;
+    };
+  
+    // Adjust the position when the page loads
+    adjustPosition();
+  
+    // Adjust the position whenever the window is resized or scrolled
+    window.addEventListener('resize', adjustPosition);
+    window.addEventListener('scroll', adjustPosition);
   });
