@@ -30,4 +30,18 @@ jQuery(document).ready(function() {
   
    
 });
+// Select all input fields
+const inputs = document.querySelectorAll('input');
 
+// Add event listeners to each input field
+inputs.forEach(input => {
+  // When the input field is focused, disable scrolling
+  input.addEventListener('focus', () => {
+    document.body.style.overflow = 'hidden';
+  });
+
+  // When the input field loses focus, enable scrolling
+  input.addEventListener('blur', () => {
+    document.body.style.overflow = '';
+  });
+});
