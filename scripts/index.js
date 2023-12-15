@@ -46,26 +46,35 @@ window.addEventListener('load', () => {
         contactFormDoor.style.top = `${doorBottom}px`;
     };
 
-    // Store the last scroll position
-    let lastScrollY = window.scrollY;
+    //adjust conditions
+// Store the last scroll position
+let lastScrollY = window.scrollY;
 
-    // Adjust the position when the page loads
-    adjustPosition();
-  
-    // Adjust the position whenever the window is resized
-    window.addEventListener('resize', adjustPosition);
+// Adjust the position when the page loads
+adjustPosition();
 
-    // Adjust the position whenever the window is scrolled by at least 100vh
-    window.addEventListener('scroll', () => {
-        // Calculate the change in scroll position
-        const deltaY = Math.abs(window.scrollY - lastScrollY);
+// Adjust the position 2 minutes after the window is resized
+window.addEventListener('resize', () => {
+    // Clear the previous timeout, if there is one
+    if (timeoutId) {
+        clearTimeout(timeoutId);
+    }
 
-        // Check if the scroll position has changed by at least 100vh
-        if (deltaY >= window.innerHeight) {
-            adjustPosition();
+    // Set a new timeout
+    timeoutId = setTimeout(adjustPosition, 2 * 1000); // 2 secs
+});
 
-            // Update the last scroll position
-            lastScrollY = window.scrollY;
-        }
-    });
+// Adjust the position whenever the window is scrolled by at least 100vh
+window.addEventListener('scroll', () => {
+    // Calculate the change in scroll position
+    const deltaY = Math.abs(window.scrollY - lastScrollY);
+
+    // Check if the scroll position has changed by at least 100vh
+    if (deltaY >= window.innerHeight) {
+        adjustPosition();
+
+        // Update the last scroll position
+        lastScrollY = window.scrollY;
+    }
+});
 });
