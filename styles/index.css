@@ -10,7 +10,7 @@
     -webkit-box-sizing: border-box;
 }
 .spacing{
-    height: 180rem;
+    height: 100rem;
 }
 body {
     overflow-x: hidden;
@@ -18,8 +18,8 @@ body {
 
 .door {
     width: 80%;
-    height: 490rem;
-    background: #000000;
+    height: 320rem;
+    background: #c8c2c2;
     margin: 80px auto;
     position: relative;
     perspective: 1000px;
@@ -144,45 +144,45 @@ box-sizing: border-box;
 
 @media (max-width: 1120px) and (min-width: 370px){
     .door{
-        min-height: 910rem;
+        min-height: 610rem;
     }
     .spacing{
-        min-height: 390rem;
+        min-height: 240rem;
     }
 }
 
 @media (max-height: 630px) and (min-width: 1120px){
     .door{
-        min-height: 600rem;
+        min-height: 325rem;
     }
     .spacing{
-        min-height: 270rem;
+        min-height: 130rem;
     }
 }
 
 @media (max-height: 630px) and (max-width: 1120px) and (min-width: 500px){
     .door{
-        min-height: 930rem;
+        min-height: 700rem;
     }
     .spacing{
-        min-height: 440rem;
+        min-height: 325rem;
     }
 }
 
 @media (min-height: 500px) and (max-width: 500px){
     .door{
-        min-height: 970rem;
+        min-height: 680rem;
     }
     .spacing{
-        min-height: 440rem;
+        min-height: 280rem;
     }
 }
 
 @media (max-width: 370px){
     .door{
-        min-height: 1030rem;
+        min-height: 730rem;
     }
     .spacing{
-        min-height: 475rem;
+        min-height: 315rem;
     }
 }
