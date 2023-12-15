@@ -133,8 +133,19 @@ $(document).ready(function() {
                 // Get the font-size of the root element
                 const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
+                // Select the div
+                const certainDiv = $('#image_slider_images'); // Replace 'certain_div_id' with the id of your div
+
+                // Get the top and bottom positions of the window
+                const topOfWindow = $(window).scrollTop();
+                const bottomOfWindow = topOfWindow + $(window).height();
+
+                // Get the top position and height of the div
+                const topOfDiv = certainDiv.offset().top;
+                const bottomOfDiv = topOfDiv + certainDiv.height();
+
                 // Calculate the extra pixels in rem
-                const extraPixels = aboutStart.offset().top > $(window).scrollTop() ? 120 * fontSize : -(10 * fontSize);
+                const extraPixels = (topOfWindow <= bottomOfDiv) ? 120 * fontSize : -(10 * fontSize);
 
                 $('html, body').animate({
                     scrollTop: aboutStart.offset().top + extraPixels
