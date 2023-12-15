@@ -51,6 +51,7 @@ const prevSlide = () => {
   }
 };
 
+
 nextButton.addEventListener("click", () => {
   nextSlide();
   if (auto) {
@@ -65,17 +66,31 @@ prevButton.addEventListener("click", () => {
     slideInterval = setInterval(nextSlide, intervalTime);
   }
 });
+// put input field back in focus
+// Select all input fields
+const inputs = document.querySelectorAll('input');
 
-// window.addEventListener('scroll', function() {
-//   var slideShowDiv = document.querySelector('.slide_show_div');
-//   var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-//   var windowHeight = window.innerHeight;
+// Add event listeners to each input field
+inputs.forEach(input => {
+  // When the input field is focused, disable scrolling
+  input.addEventListener('focus', () => {
+    gsap.utils.toArray(".door").forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top", 
+        pin: true, 
+        pinSpacing: false,
+        scrub: true,
+        end: () => "+=" + panel.offsetWidth,
+        invalidateOnRefresh: true,
+        // Disable scrolling when the input field is focused
+        onToggle: self => self.isActive && window.scrollTo(0, self.start)
+      });
+    });
+  });
 
-//   if (scrollPosition > windowHeight) { // 100vh is equal to the window height
-//       slideShowDiv.style.position = 'absolute';
-//       slideShowDiv.style.top = (scrollPosition - windowHeight) + 'px'; // slide off based on how much you've scrolled past 100vh
-//   } else {
-//       slideShowDiv.style.position = 'sticky';
-//       slideShowDiv.style.top = '0'; // reset to top when scrolling up
-//   }
-// });
+  // When the input field loses focus, enable scrolling
+  input.addEventListener('blur', () => {
+    ScrollTrigger.refresh();
+  });
+});
