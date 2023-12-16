@@ -154,7 +154,18 @@ $(document).ready(function() {
                 const bottomOfDiv = topOfDiv + certainDiv.height();
 
                 // Calculate the extra pixels in rem
-                const extraPixels = (topOfWindow <= bottomOfDiv) ? 120 * fontSize : -(10 * fontSize);
+                // Calculate the extra pixels in rem
+                let extraPixels;
+                if (window.innerWidth <= 1024) { // If the viewport width is 768px or less, assume the user is on a phone
+                    if (window.innerHeight > 800) { // If the viewport height is 667px or less
+                        extraPixels = (topOfWindow <= bottomOfDiv) ? 180 * fontSize : -(20 * fontSize); // Increase the extra pixels for these devices
+                    } else {
+                        extraPixels = (topOfWindow <= bottomOfDiv) ? 130 * fontSize : -(10 * fontSize);
+                        console.log(1)
+                    }
+                } else {
+                    extraPixels = (topOfWindow <= bottomOfDiv) ? 130 * fontSize : -(10 * fontSize);
+                }
 
                 $('html, body').animate({
                     scrollTop: aboutStart.offset().top + extraPixels
