@@ -123,8 +123,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 $(document).ready(function() {
+    let lastInvocation = 0;
+    const debounceTime = 2000; // 2000 milliseconds = 2 seconds
+
     $('#about_link').on('click', function(event) {
         event.preventDefault(); // Prevent the default action
+
+        const now = Date.now();
+        if (now - lastInvocation < debounceTime) {
+            return; // If less than 2 seconds have passed since the last invocation, do nothing
+        }
+        lastInvocation = now; // Update the time of the last invocation
 
         // Create a function to check if the about_start element exists
         function checkAndScroll() {
