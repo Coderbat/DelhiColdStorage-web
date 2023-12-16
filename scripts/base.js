@@ -69,6 +69,19 @@ if (auto) {
   slideInterval = setInterval(nextSlide, intervalTime);
 }
 
+// Get all the links inside the navbar
+var navLinks = document.querySelectorAll('nav ul li a');
+
+// Get the checkbox used to toggle the hamburger menu
+var navToggle = document.querySelector('.nav-toggle');
+
+// Add a click event listener to each link
+for (var i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener('click', function() {
+    // Uncheck the checkbox to collapse the navbar
+    navToggle.checked = false;
+  });
+}
 
 // window.addEventListener('scroll', function() {
 //   var slideShowDiv = document.querySelector('.slide_show_div');
