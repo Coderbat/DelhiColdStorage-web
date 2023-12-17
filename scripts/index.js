@@ -154,7 +154,7 @@ $(document).ready(function() {
                 const bottomOfDiv = topOfDiv + certainDiv.height();
 
                 // Calculate the extra pixels in rem
-                const extraPixels = (topOfWindow <= bottomOfDiv) ? ((window.innerHeight * 3.5) - $(window).scrollTop()) : -(10 * fontSize);
+                const extraPixels = (topOfWindow <= (bottomOfDiv+(window.innerHeight * 3.5))) ? ((window.innerHeight * 3.5) - $(window).scrollTop()) : -(10 * fontSize);
                 $('html, body').animate({
                     scrollTop: aboutStart.offset().top + extraPixels
                 }, 1000); // Scroll to the about_start element
