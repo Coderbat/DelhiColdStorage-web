@@ -83,16 +83,33 @@ for (var i = 0; i < navLinks.length; i++) {
   });
 }
 
-// window.addEventListener('scroll', function() {
-//   var slideShowDiv = document.querySelector('.slide_show_div');
-//   var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-//   var windowHeight = window.innerHeight;
+// Wait for the document to load
+$(document).ready(function() {
+  // Select all elements with the classes 
+  const elements = $('.col-text, .col-image');
 
-//   if (scrollPosition > windowHeight) { // 100vh is equal to the window height
-//       slideShowDiv.style.position = 'absolute';
-//       slideShowDiv.style.top = (scrollPosition - windowHeight) + 'px'; // slide off based on how much you've scrolled past 100vh
-//   } else {
-//       slideShowDiv.style.position = 'sticky';
-//       slideShowDiv.style.top = '0'; // reset to top when scrolling up
-//   }
-// });
+  // Set initial opacity to 0
+  gsap.set(elements, { autoAlpha: 0 });
+
+  // Function to check if an element is in the viewport
+  function isInViewport(element) {
+    const elementTop = $(element).offset().top;
+    const elementBottom = elementTop + $(element).outerHeight();
+    const viewportTop = $(window).scrollTop();
+    const viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  }
+
+  // Function to animate elements
+  function animateElements() {
+    elements.each(function() {
+      if (isInViewport(this)) {
+        gsap.to(this, { duration: 2, autoAlpha: 1 });
+      }
+    });
+  }
+
+  // Animate elements initially and on scroll
+  animateElements();
+  $(window).on('scroll resize', animateElements);
+});
