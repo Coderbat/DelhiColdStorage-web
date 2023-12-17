@@ -155,6 +155,16 @@ $(document).ready(function() {
 
                 // Calculate the extra pixels in rem
                 const extraPixels = (topOfWindow <= (bottomOfDiv+(window.innerHeight * 3.5))) ? ((window.innerHeight * 3.5) - $(window).scrollTop()) : -(10 * fontSize);
+
+                // Get the top position and height of the about_start element
+                const topOfAboutStart = aboutStart.offset().top;
+                const bottomOfAboutStart = topOfAboutStart + aboutStart.height();
+
+                // Check if about_start is already visible in the viewport and if extraPixels is negative
+                if (topOfAboutStart >= topOfWindow && bottomOfAboutStart <= bottomOfWindow && extraPixels < 0) {
+                    return; // If about_start is visible and extraPixels is negative, return without scrolling
+                }
+
                 $('html, body').animate({
                     scrollTop: aboutStart.offset().top + extraPixels
                 }, 1000); // Scroll to the about_start element
