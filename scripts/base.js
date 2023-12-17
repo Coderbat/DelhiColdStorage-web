@@ -86,7 +86,7 @@ for (var i = 0; i < navLinks.length; i++) {
 // Wait for the document to load
 $(document).ready(function() {
   // Select all elements with the classes 
-  const elements = $('.col-text, .col-image');
+  const elements = $('.grid-flex');
 
   // Set initial opacity to 0
   gsap.set(elements, { autoAlpha: 0 });
@@ -104,7 +104,7 @@ $(document).ready(function() {
   function animateElements() {
     elements.each(function() {
       if (isInViewport(this)) {
-        gsap.to(this, { duration: 2, autoAlpha: 1 });
+        gsap.to(this, { duration: 2.5, autoAlpha: 1 });
       }
     });
   }
