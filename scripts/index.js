@@ -154,7 +154,12 @@ $(document).ready(function() {
                 const bottomOfDiv = topOfDiv + certainDiv.height();
 
                 // Calculate the extra pixels in rem
-                const extraPixels = (topOfWindow <= bottomOfDiv) ? (window.innerHeight * 3.5) : -(10 * fontSize);
+                let extraPixels = (topOfWindow <= bottomOfDiv) ? (window.innerHeight * 3.5) : -(10 * fontSize);
+                
+                // If the user has scrolled past the certainDiv, subtract its height from extraPixels
+                if (topOfDiv < topOfWindow) {
+                    extraPixels -= certainDiv.height();
+                }
 
                 $('html, body').animate({
                     scrollTop: aboutStart.offset().top + extraPixels
