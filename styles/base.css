@@ -135,6 +135,14 @@ nav li {
 	opacity: 1;
 	transition: opacity 150ms ease-in-out;
 }
+footer {
+	text-align: center;
+	background-color:  var(--background);
+	color: rgb(255, 255, 255);
+	padding: 1rem;
+	width: 100vw;
+	bottom: 0;
+}
 
 .page_link_nav:hover {
 	color:#000;
