@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // Call this function again after a delay
                 timeoutId = setTimeout(() => {
                     scrollToContactForm(currentY);
-                }, 400); // Adjust the delay as needed
+                }, 500); // Adjust the delay as needed
             }
         }
     }
