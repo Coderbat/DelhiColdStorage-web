@@ -18,6 +18,9 @@ form.addEventListener('submit', function(e) {
       alert("Please fill out captcha field")
       return
   }
+});
+
+window.addEventListener('pageshow', function() {
   form.reset();
 });
 
