@@ -20,9 +20,6 @@ form.addEventListener('submit', function(e) {
   }
 });
 
-window.addEventListener('pageshow', function() {
-  form.reset();
-});
 
 
 // Slide show js
