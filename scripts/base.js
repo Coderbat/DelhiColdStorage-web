@@ -1,4 +1,6 @@
 window.onload = function() {
+  const form = document.getElementById('ContactForm');
+  form.reset();
   var phoneInput = document.getElementById('phone');
   phoneInput.oninvalid = function(event) {
       event.target.setCustomValidity('Please enter a valid phone number.');
@@ -19,7 +21,6 @@ form.addEventListener('submit', function(e) {
       return
   }
 });
-
 
 
 // Slide show js
