@@ -9,18 +9,18 @@ window.onload = function() {
       event.target.setCustomValidity('');
   }
 }
-const form = document.getElementById('ContactForm');
+// const form = document.getElementById('ContactForm');
 
-form.addEventListener('submit', function(e) {
+// form.addEventListener('submit', function(e) {
 
-  const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+//   const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
 
-  if (!hCaptcha) {
-      e.preventDefault();
-      alert("Please fill out captcha field")
-      return
-  }
-});
+//   if (!hCaptcha) {
+//       e.preventDefault();
+//       alert("Please fill out captcha field")
+//       return
+//   }
+// });
 
 
 // Slide show js
